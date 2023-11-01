@@ -18,15 +18,15 @@ const fetchTopTen = async(userId)=> {
   return response.rows;
 };
 
-// const createTopTen = async(topten)=> {
-//   const SQL = `
-//   INSERT INTO topten (products_id, users_id, id) VALUES($1, $2, $3) RETURNING *
-// `;
-//  response = await client.query(SQL, [ topten.products_id, topten.users_id, uuidv4()]);
-//   return response.rows[0];
-// };
+const createTopTen = async(topten)=> {
+  const SQL = `
+  INSERT INTO topten (product_id, user_id, ranking_id, id) VALUES($1, $2, $3, $4) RETURNING *
+`;
+ response = await client.query(SQL, [ topten.product_id, topten.user_id, topten.ranking_id, uuidv4()]);
+  return response.rows[0];
+};
 
 module.exports = {
   fetchTopTen,
-//   createTopTen,
+  createTopTen,
 };

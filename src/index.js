@@ -7,6 +7,7 @@ import Cart from './Cart';
 import Login from './Login';
 import api from './api';
 import Ranking from './Ranking';
+import TopTen from './TopTen'
 const App = ()=> {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
@@ -14,6 +15,7 @@ const App = ()=> {
   const [auth, setAuth] = useState({});
   const [ranking, setRanking] = useState([]);
   const [topten, setTopTen] = useState([]);
+  const [users, setUsers] = useState([]);
   const attemptLoginWithToken = async()=> {
     await api.attemptLoginWithToken(setAuth);
   }
@@ -25,6 +27,12 @@ const App = ()=> {
   useEffect(()=> {
     const fetchData = async()=> {
       await api.fetchProducts(setProducts);
+    };
+    fetchData();
+  }, []);
+  useEffect(()=> {
+    const fetchData = async()=> {
+      await api.fetchUsers(setUsers);
     };
     fetchData();
   }, []);
@@ -104,6 +112,7 @@ const App = ()=> {
             <nav>
             <Link to='/products'>Products ({ products.length })</Link>
             <Link to='/ranking'>ranking</Link>
+            <Link to='/topten'>topten</Link>
               {/* <Link to='/orders'>Orders ({ orders.filter(order => !order.is_cart).length })</Link>
               <Link to='/cart'>Cart ({ cartCount })</Link> */}
               <span>
@@ -128,6 +137,14 @@ const App = ()=> {
                 auth = { auth }
                 ranking= {ranking}
 
+              />}/>
+              <Route path='/topten' element={
+                <TopTen
+                auth = { auth }
+                ranking= {ranking}
+                topten={topten}
+                users={users}
+                products={products}
               />}/>
             </Routes>
               {/* <Cart

@@ -6,6 +6,10 @@ const {
 } = require('./products');
 
 const {
+  fetchUsers
+} = require('./users');
+
+const {
   fetchRanking,
   createRanking
 } = require('./ranking');
@@ -27,7 +31,7 @@ const {
 
 const {
   fetchTopTen,
-  // createTopTen,
+  createTopTen,
 } = require('./topten');
 
 
@@ -89,7 +93,7 @@ const seed = async()=> {
     createUser({ username: 'lucy', password: 'l_password', is_admin: false}),
     createUser({ username: 'ethyl', password: '1234', is_admin: true})
   ]);
-  const [foo, bar, bazz] = await Promise.all([
+  const [foo, bar, bazz, bass] = await Promise.all([
     createProduct({ name: 'foo' }),
     createProduct({ name: 'bar' }),
     createProduct({ name: 'bazz' }),
@@ -107,6 +111,10 @@ const seed = async()=> {
     createRanking({ ranking: 9 }),
     createRanking({ ranking: 10 })
     
+  ]);
+  console.log(foo.id)
+  const [alpha] = await Promise.all([
+    createTopTen({ product_id: foo.id, user_id: ethyl.id, ranking_id: one.id})
   ]);
   let orders = await fetchOrders(ethyl.id);
   let cart = orders.find(order => order.is_cart);
@@ -132,6 +140,7 @@ module.exports = {
   fetchRanking,
   createRanking,
   fetchTopTen,
-  // createTopTen,
+  createTopTen,
+  fetchUsers,
   client
 };

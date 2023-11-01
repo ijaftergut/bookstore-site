@@ -12,6 +12,10 @@ const fetchProducts = async(setProducts)=> {
   const response = await axios.get('/api/products');
   setProducts(response.data);
 };
+const fetchUsers = async(setUsers)=> {
+  const response = await axios.get('/api/users');
+  setUsers(response.data);
+};
 const fetchRanking = async(setRanking)=> {
   const response = await axios.get('/api/ranking');
   setRanking(response.data);
@@ -37,6 +41,10 @@ const createLineItem = async({ product, cart, lineItems, setLineItems })=> {
     product_id: product.id
   }, getHeaders());
   setLineItems([...lineItems, response.data]);
+};
+const createTopTen = async({ product, cart, topten, setTopTen })=> {
+  const response = await axios.post('/api/topten', getHeaders());
+  setTopTen([...topten, response.data]);
 };
 
 const updateLineItem = async({ lineItem, cart, lineItems, setLineItems })=> {
@@ -98,6 +106,7 @@ const api = {
   attemptLoginWithToken,
   fetchRanking,
   fetchTopTen,
+  fetchUsers,
 };
 
 export default api;
