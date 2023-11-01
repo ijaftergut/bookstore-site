@@ -6,12 +6,13 @@ import Orders from './Orders';
 import Cart from './Cart';
 import Login from './Login';
 import api from './api';
-
+import Ranking from './Ranking';
 const App = ()=> {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
   const [lineItems, setLineItems] = useState([]);
   const [auth, setAuth] = useState({});
+  const [ranking, setRanking] = useState([]);
 
   const attemptLoginWithToken = async()=> {
     await api.attemptLoginWithToken(setAuth);
@@ -36,6 +37,13 @@ const App = ()=> {
       fetchData();
     }
   }, [auth]);
+
+  useEffect(()=> {
+    const fetchData = async()=> {
+      await api.fetchRanking(setRanking);
+    };
+    fetchData();
+  }, []);
 
   useEffect(()=> {
     if(auth.id){
@@ -78,7 +86,6 @@ const App = ()=> {
   const logout = ()=> {
     api.logout(setAuth);
   }
-
   return (
     <div>
       {
@@ -86,22 +93,30 @@ const App = ()=> {
           <>
             <nav>
               <Link to='/products'>Products ({ products.length })</Link>
-              <Link to='/orders'>Orders ({ orders.filter(order => !order.is_cart).length })</Link>
-              <Link to='/cart'>Cart ({ cartCount })</Link>
+              {/* <Link to='/orders'>Orders ({ orders.filter(order => !order.is_cart).length })</Link>
+              <Link to='/cart'>Cart ({ cartCount })</Link> */}
               <span>
                 Welcome { auth.username }!
                 <button onClick={ logout }>Logout</button>
               </span>
             </nav>
             <main>
-              <Products
+              
+            <Products
                 auth = { auth }
                 products={ products }
                 cartItems = { cartItems }
                 createLineItem = { createLineItem }
                 updateLineItem = { updateLineItem }
+                ranking={ranking}
+
               />
-              <Cart
+              <Ranking
+                auth = { auth }
+                ranking= {ranking}
+
+              />
+              {/* <Cart
                 cart = { cart }
                 lineItems = { lineItems }
                 products = { products }
@@ -112,7 +127,7 @@ const App = ()=> {
                 orders = { orders }
                 products = { products }
                 lineItems = { lineItems }
-              />
+              /> */}
             </main>
             </>
         ):(
@@ -125,6 +140,11 @@ const App = ()=> {
               updateLineItem = { updateLineItem }
               auth = { auth }
             />
+            <Ranking
+                auth = { auth }
+                ranking= {ranking}
+
+              />
           </div>
         )
       }

@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Products = ({ products,  auth})=> {
+const Ranking = ({ ranking, auth})=> {
+    console.log(ranking)
   return (
     <div>
-      <h2>Products</h2>
+      <h2>Ranking</h2>
       <ul>
         {
-          products.map( product => {
+          ranking.map( ranking => {
             // const cartItem = cartItems.find(lineItem => lineItem.product_id === product.id);
             return (
-              <li key={ product.id }>
-                { product.name }
+              <li key={ ranking.ranking }>
+                { ranking.ranking }
                 {/* {
                   auth.id ? (
                     cartItem ? <button onClick={ ()=> updateLineItem(cartItem)}>Add Another</button>: <button onClick={ ()=> createLineItem(product)}>Add</button>
@@ -31,4 +32,4 @@ const Products = ({ products,  auth})=> {
   );
 };
 
-export default Products;
+export default Ranking;
