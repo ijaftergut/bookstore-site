@@ -25,9 +25,15 @@ const {
   fetchOrders
 } = require('./cart');
 
+const {
+  fetchTopTen,
+  // createTopTen,
+} = require('./topten');
+
 
 const seed = async()=> {
   const SQL = `
+    DROP TABLE IF EXISTS topten;
     DROP TABLE IF EXISTS ranking;
     DROP TABLE IF EXISTS line_items;
     DROP TABLE IF EXISTS products CASCADE;
@@ -67,6 +73,14 @@ const seed = async()=> {
       id UUID PRIMARY KEY,
       ranking INTEGER DEFAULT 0 NOT NULL UNIQUE
     );
+    CREATE TABLE topten(
+      id UUID PRIMARY KEY,
+      product_id UUID REFERENCES products(id) NOT NULL,
+      user_id UUID REFERENCES users(id) NOT NULL,
+      ranking_id UUID REFERENCES ranking(id) NOT NULL,
+      CONSTRAINT product_and_user_and_ranking_key UNIQUE(product_id, user_id)
+    
+    )
   `;
   await client.query(SQL);
 
@@ -117,5 +131,7 @@ module.exports = {
   seed,
   fetchRanking,
   createRanking,
+  fetchTopTen,
+  // createTopTen,
   client
 };
