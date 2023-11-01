@@ -92,7 +92,8 @@ const App = ()=> {
         auth.id ? (
           <>
             <nav>
-              <Link to='/products'>Products ({ products.length })</Link>
+            <Link to='/products'>Products ({ products.length })</Link>
+            <Link to='/ranking'>ranking</Link>
               {/* <Link to='/orders'>Orders ({ orders.filter(order => !order.is_cart).length })</Link>
               <Link to='/cart'>Cart ({ cartCount })</Link> */}
               <span>
@@ -101,21 +102,24 @@ const App = ()=> {
               </span>
             </nav>
             <main>
-              
-            <Products
+            <Routes>
+              <Route path='/products' element={
+                <Products
                 auth = { auth }
                 products={ products }
                 cartItems = { cartItems }
                 createLineItem = { createLineItem }
                 updateLineItem = { updateLineItem }
                 ranking={ranking}
+                />}/>
 
-              />
-              <Ranking
+              <Route path='/ranking' element={
+                <Ranking
                 auth = { auth }
                 ranking= {ranking}
 
-              />
+              />}/>
+            </Routes>
               {/* <Cart
                 cart = { cart }
                 lineItems = { lineItems }
