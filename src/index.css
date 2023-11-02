@@ -102,3 +102,6 @@ form {
 form > * {
   margin: 0.5rem;
 }
+.all {
+  display:flex;
+}

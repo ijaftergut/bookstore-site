@@ -167,18 +167,18 @@ const App = ()=> {
       {
         auth.id ? (
           <>
-            <nav>
+            <nav className='all'>
             <Link to='/products'>Products ({ products.length })</Link>
             <Link to='/ranking'>ranking</Link>
             <Link to='/topten'>topten</Link>
               {/* <Link to='/orders'>Orders ({ orders.filter(order => !order.is_cart).length })</Link>
               <Link to='/cart'>Cart ({ cartCount })</Link> */}
-              <span>
+              <span className='all'>
                 Welcome { auth.username }!
                 <button onClick={ logout }>Logout</button>
               </span>
             </nav>
-            <main>
+            <main className='all'>
             <Routes>
               <Route path='/products' element={
                 <Products
@@ -220,7 +220,7 @@ const App = ()=> {
             </main>
             </>
         ):(
-          <div>
+          <div className='all'>
             <Login login={ login }/>
             <Products
               products={ products }
