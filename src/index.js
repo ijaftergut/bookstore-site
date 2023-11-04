@@ -222,18 +222,7 @@ const App = ()=> {
         ):(
           <div className='all'>
             <Login login={ login }/>
-            <Products
-              products={ products }
-              cartItems = { cartItems }
-              createLineItem = { createLineItem }
-              updateLineItem = { updateLineItem }
-              auth = { auth }
-            />
-            <Ranking
-                auth = { auth }
-                ranking= {ranking}
-
-              />
+            
           </div>
         )
       }
