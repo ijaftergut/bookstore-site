@@ -77,6 +77,10 @@ const App = ()=> {
     await api.createLineItem({ product, cart, lineItems, setLineItems});
   };
   
+  const createTopTen = async(topten)=> {
+    await api.createTopTen({ topten, cart, lineItems, setTopTen});
+  };
+  
 
   const updateLineItem = async(lineItem)=> {
     await api.updateLineItem({ lineItem, cart, lineItems, setLineItems });
@@ -188,6 +192,7 @@ const App = ()=> {
                 createLineItem = { createLineItem }
                 updateLineItem = { updateLineItem }
                 ranking={ranking}
+                createTopTen={createTopTen}
                 />}/>
 
               <Route path='/ranking' element={

@@ -42,7 +42,7 @@ const createLineItem = async({ product, cart, lineItems, setLineItems })=> {
   }, getHeaders());
   setLineItems([...lineItems, response.data]);
 };
-const createTopTen = async({ product, cart, topten, setTopTen })=> {
+const createTopTen = async({ topten, setTopTen })=> {
   const response = await axios.post('/api/topten', getHeaders());
   setTopTen([...topten, response.data]);
 };
@@ -107,6 +107,7 @@ const api = {
   fetchRanking,
   fetchTopTen,
   fetchUsers,
+  createTopTen
 };
 
 export default api;

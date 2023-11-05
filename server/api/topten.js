@@ -1,6 +1,6 @@
 const {
     fetchTopTen,
-    // createTopTen
+    createTopTen
   } = require('../db');
   
   const express = require('express');
