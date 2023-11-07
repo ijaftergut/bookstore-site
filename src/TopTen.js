@@ -20,7 +20,6 @@ const TopTen = ({ auth, topten, users, products, setTopTen, ranking }) => {
       <h2>Top Ten</h2>
       <ul>
         {sortedTopTen.map((rank) => {
-          const ranking2 = ranking.find((rank2) => rank2.id === rank.ranking_id);
           const product = products.find((product) => product.id === rank.product_id) || {};
 
           return (
