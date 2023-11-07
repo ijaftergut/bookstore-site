@@ -42,11 +42,14 @@ const createLineItem = async({ product, cart, lineItems, setLineItems })=> {
   }, getHeaders());
   setLineItems([...lineItems, response.data]);
 };
-const createTopTen = async({ topten, setTopTen })=> {
-  const response = await axios.post('/api/topten', getHeaders());
-  setTopTen([...topten, response.data]);
+// const createTopTen = async({ topten, setTopTen })=> {
+//   const response = await axios.post('/api/topten', getHeaders());
+//   setTopTen([...topten, response.data]);
+// };
+const submitTopTen = async (json) => {
+  const response = await axios.post('/api/topten', json)
+  return response.data
 };
-
 const updateLineItem = async({ lineItem, cart, lineItems, setLineItems })=> {
   const response = await axios.put(`/api/lineItems/${lineItem.id}`, {
     quantity: lineItem.quantity + 1,
@@ -107,7 +110,7 @@ const api = {
   fetchRanking,
   fetchTopTen,
   fetchUsers,
-  createTopTen
+  submitTopTen
 };
 
 export default api;

@@ -1,5 +1,6 @@
 const {
     fetchRanking,
+    createRanking
   } = require('../db');
   
   const express = require('express');
@@ -14,6 +15,15 @@ const {
       next(ex);
     }
   });
-
+  app.post('/', async (req, res, next) => {
+    try {
+     {
+        const response = await createRanking(req.body)
+        res.send(response)
+      }
+    } catch (error) {
+      next(error);
+    }
+  });
   module.exports = app;
   

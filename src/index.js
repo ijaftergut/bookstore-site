@@ -193,6 +193,9 @@ const App = ()=> {
                 updateLineItem = { updateLineItem }
                 ranking={ranking}
                 createTopTen={createTopTen}
+                topten={topten}
+                users={users}
+                setTopTen={setTopTen}
                 />}/>
 
               <Route path='/ranking' element={
@@ -208,6 +211,7 @@ const App = ()=> {
                 topten={topten}
                 users={users}
                 products={products}
+                setTopTen={setTopTen}
               />}/>
             </Routes>
               {/* <Cart

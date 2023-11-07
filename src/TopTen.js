@@ -1,7 +1,7 @@
 import React from 'react';
 
-const TopTen = ({ auth, topten, users, products })=> {
-
+const TopTen = ({ auth, topten, users, products, setTopTen, ranking })=> {
+  
   const user = users.find(user =>  user.id === auth.id);
   return (
     <div>
@@ -13,11 +13,13 @@ const TopTen = ({ auth, topten, users, products })=> {
             return (
               <li key={ rank.id }>
                 { product.name }
+                
               </li>
             );
           })
         }
       </ul>
+      
     </div>
   );
 };

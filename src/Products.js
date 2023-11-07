@@ -1,7 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const Products = ({ products,  auth, createTopTen})=> {
+import TopTenForm from './TopTenForm';
+const Products = ({ products,  auth, createTopTen, topten, users, setTopTen, ranking})=> {
+  const handleTopTenSubmission = async () => {
+    try {
+      const response = await api.submitTopTen(json);
+        setTopTen([...topten, response]);
+    } catch (error) {
+      console.error("Error submitting review:", error);
+    }
+  };
   return (
     <div>
       <h2>Products</h2>
@@ -12,11 +20,15 @@ const Products = ({ products,  auth, createTopTen})=> {
             return (
               <li key={ product.id }>
                 { product.name }
-                {
-                  auth.id ? (
-                    <button onClick={ ()=> createTopTen({product_id: product.id, ranking_id: 2, user_id: auth.id})}>Add to TopTen</button>
-                  ): null 
-                }
+                
+                <TopTenForm
+            onSubmit={handleTopTenSubmission}
+            topten={topten}
+            setTopTen={setTopTen}
+            auth={auth}
+            product={product}
+            ranking={ranking}
+          />
                 {/* {
                   auth.is_admin ? (
                     <Link to={`/products/${product.id}/edit`}>Edit</Link>

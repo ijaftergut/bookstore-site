@@ -16,13 +16,14 @@ const {
     }
   });
   
-  app.post('/', isLoggedIn, async(req, res, next)=> {
+  app.post('/', async (req, res, next) => {
     try {
-      //TODO make sure the order's user_id is req.user.id 
-      res.send(await createTopTen(req.body));
-    }
-    catch(ex){
-      next(ex);
+     {
+        const response = await createTopTen(req.body)
+        res.send(response)
+      }
+    } catch (error) {
+      next(error);
     }
   });
   

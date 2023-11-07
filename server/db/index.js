@@ -37,9 +37,9 @@ const {
 
 const seed = async()=> {
   const SQL = `
-    DROP TABLE IF EXISTS topten;
-    DROP TABLE IF EXISTS ranking;
-    DROP TABLE IF EXISTS line_items;
+    DROP TABLE IF EXISTS topten CASCADE;
+    DROP TABLE IF EXISTS ranking CASCADE;
+    DROP TABLE IF EXISTS line_items CASCADE;
     DROP TABLE IF EXISTS products CASCADE;
     DROP TABLE IF EXISTS orders CASCADE;
     DROP TABLE IF EXISTS users CASCADE;
