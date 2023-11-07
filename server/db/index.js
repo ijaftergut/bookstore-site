@@ -1,4 +1,6 @@
 const client = require('./client');
+const path = require('path');
+const fs = require('fs')
 
 const {
   fetchProducts,
@@ -34,8 +36,20 @@ const {
   createTopTen,
 } = require('./topten');
 
-
+const loadImage = (filepath) => {
+  return new Promise((resolve, reject) => {
+    const fullPath = path.join(__dirname, filepath)
+    fs.readFile(fullPath, 'base64', (error, result) => {
+      if (error) {
+        reject(error)
+      } else {
+        resolve(`data:image/png;base64,${result}`)
+      }
+    });  
+  });
+}
 const seed = async()=> {
+  const productImage = await loadImage('images/product-placeholder.png')
   const SQL = `
     DROP TABLE IF EXISTS topten CASCADE;
     DROP TABLE IF EXISTS ranking CASCADE;
@@ -55,7 +69,9 @@ const seed = async()=> {
     CREATE TABLE products(
       id UUID PRIMARY KEY,
       created_at TIMESTAMP DEFAULT now(),
-      name VARCHAR(100) UNIQUE NOT NULL
+      name VARCHAR(100) UNIQUE NOT NULL,
+      description VARCHAR(1600),
+      image TEXT DEFAULT '${productImage}'
     );
 
     CREATE TABLE orders(
@@ -94,7 +110,7 @@ const seed = async()=> {
     createUser({ username: 'ethyl', password: '1234', is_admin: true})
   ]);
   const [foo, bar, bazz, bass] = await Promise.all([
-    createProduct({ name: 'foo' }),
+    createProduct({ name: 'foo' , image: 'https://i.imgur.com/EtIXBar.png'}),
     createProduct({ name: 'bar' }),
     createProduct({ name: 'bazz' }),
     createProduct({ name: 'quq' }),

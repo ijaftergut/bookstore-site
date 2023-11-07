@@ -20,6 +20,7 @@ const Products = ({ products,  auth, createTopTen, topten, users, setTopTen, ran
             return (
               <li key={ product.id }>
                 { product.name }
+                <img src={product.image} />
                 {!top?
                 <TopTenForm
             onSubmit={handleTopTenSubmission}
