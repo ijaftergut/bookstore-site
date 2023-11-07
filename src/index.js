@@ -110,12 +110,9 @@ const App = ()=> {
     api.logout(setAuth);
   }
   const [scores, setScores] = useState({
-    guitar: 0,
-    drum: 0,
-    piano: 0,
+    library: 0,
   });
   let handleImageClick = (image) => {
-    console.log(1)
     setScores((prevScores) => ({
       ...prevScores,
       [image]: prevScores[image] + 1,
@@ -133,41 +130,41 @@ const App = ()=> {
   </div>: null}
        <div className='content'>
                 <div className="leaf">
-                   <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
+                   <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                   </div>
                   <div className="leaf leaf1">
-                  <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
+                  <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                   </div>
                   <div className="leaf leaf2">
-                  <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/7/Drum-Table-PNG-File.png" height="75px" width="75px" onClick={() => handleImageClick('drum')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/16/Piano-Instrument-PNG-Image.png" height="75px" width="75px" onClick={() => handleImageClick('piano')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/15/Yellow-Vector-Acoustic-Guitar-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('guitar')}></img></div>
-                   </div>     
+                  <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                  </div>  
       {
         auth.id ? (
           <>

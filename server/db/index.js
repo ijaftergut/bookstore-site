@@ -110,7 +110,7 @@ const seed = async()=> {
     createUser({ username: 'ethyl', password: '1234', is_admin: true})
   ]);
   const [foo, bar, bazz, bass] = await Promise.all([
-    createProduct({ name: 'foo' , image: 'https://i.imgur.com/EtIXBar.png'}),
+    createProduct({ name: 'foo' , image: 'https://i.imgur.com/EtIXBar.png', description:'hello world'}),
     createProduct({ name: 'bar' }),
     createProduct({ name: 'bazz' }),
     createProduct({ name: 'quq' }),

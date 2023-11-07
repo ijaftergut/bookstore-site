@@ -19,8 +19,9 @@ const Products = ({ products,  auth, createTopTen, topten, users, setTopTen, ran
             const top = topten.find(top=>top.product_id===product.id)
             return (
               <li key={ product.id }>
-                { product.name }
-                <img src={product.image} />
+                <h3 className='all'>{ product.name }</h3>
+                <img className='all' src={product.image} />
+                <p className='all'>{product.description}</p>
                 {!top?
                 <TopTenForm
             onSubmit={handleTopTenSubmission}
