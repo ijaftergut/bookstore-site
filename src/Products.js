@@ -16,11 +16,11 @@ const Products = ({ products,  auth, createTopTen, topten, users, setTopTen, ran
       <ul>
         {
           products.map( product => {
-            // const cartItem = cartItems.find(lineItem => lineItem.product_id === product.id);
+            const top = topten.find(top=>top.product_id===product.id)
             return (
               <li key={ product.id }>
                 { product.name }
-                
+                {!top?
                 <TopTenForm
             onSubmit={handleTopTenSubmission}
             topten={topten}
@@ -28,12 +28,8 @@ const Products = ({ products,  auth, createTopTen, topten, users, setTopTen, ran
             auth={auth}
             product={product}
             ranking={ranking}
-          />
-                {/* {
-                  auth.is_admin ? (
-                    <Link to={`/products/${product.id}/edit`}>Edit</Link>
-                  ): null
-                } */}
+          />:null}
+                
               </li>
             );
           })
