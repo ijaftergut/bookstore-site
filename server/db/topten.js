@@ -17,6 +17,14 @@ const fetchTopTen = async(userId)=> {
   const response = await client.query(SQL, [ userId ]);
   return response.rows;
 };
+const fetchAllTopTen = async()=> {
+  const SQL = `
+  SELECT *
+  FROM topten
+  `;
+  const response = await client.query(SQL);
+  return response.rows;
+};
 
 const createTopTen = async(topten)=> {
   const SQL = `
@@ -29,4 +37,5 @@ const createTopTen = async(topten)=> {
 module.exports = {
   fetchTopTen,
   createTopTen,
+  fetchAllTopTen,
 };

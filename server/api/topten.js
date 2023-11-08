@@ -1,6 +1,7 @@
 const {
     fetchTopTen,
-    createTopTen
+    createTopTen,
+    fetchAllTopTen
   } = require('../db');
   
   const express = require('express');
@@ -10,6 +11,14 @@ const {
   app.get('/', isLoggedIn, async(req, res, next)=> {
     try {
       res.send(await fetchTopTen(req.user.id));
+    }
+    catch(ex){
+      next(ex);
+    }
+  });
+  app.get('/all', async(req, res, next)=> {
+    try {
+      res.send(await fetchAllTopTen());
     }
     catch(ex){
       next(ex);

@@ -22,6 +22,10 @@ const fetchRanking = async(setRanking)=> {
   const response = await axios.get('/api/ranking');
   setRanking(response.data);
 };
+const fetchAllTopTen = async(setAllTopTen)=> {
+  const response = await axios.get('/api/topten/all');
+  setAllTopTen(response.data);
+};
 
 const fetchTopTen = async(setTopTen)=> {
   const response = await axios.get('/api/topten', getHeaders());
@@ -78,7 +82,8 @@ const api = {
   fetchUsers,
   submitTopTen,
   createUser,
-  updateUser
+  updateUser,
+  fetchAllTopTen
 };
 
 export default api;

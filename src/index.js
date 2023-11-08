@@ -13,6 +13,7 @@ const App = ()=> {
   const [auth, setAuth] = useState({});
   const [ranking, setRanking] = useState([]);
   const [topten, setTopTen] = useState([]);
+  const [allTopTen, setAllTopTen]=useState([])
   const [users, setUsers] = useState([]);
   const attemptLoginWithToken = async()=> {
     await api.attemptLoginWithToken(setAuth);
@@ -41,6 +42,12 @@ const App = ()=> {
   useEffect(()=> {
     const fetchData = async()=> {
       await api.fetchRanking(setRanking);
+    };
+    fetchData();
+  }, []);
+  useEffect(()=> {
+    const fetchData = async()=> {
+      await api.fetchAllTopTen(setAllTopTen);
     };
     fetchData();
   }, []);
@@ -170,6 +177,8 @@ const App = ()=> {
                     products={products}
                     setProducts={setProducts}
                     auth={auth}
+                    topten={allTopTen}
+                    ranking={ranking}
                   />}/>
             </Routes>
 

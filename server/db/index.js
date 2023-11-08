@@ -24,6 +24,7 @@ const {
 const {
   fetchTopTen,
   createTopTen,
+  fetchAllTopTen,
 } = require('./topten');
 
 const loadImage = (filepath) => {
@@ -144,5 +145,6 @@ module.exports = {
   fetchTopTen,
   createTopTen,
   fetchUsers,
+  fetchAllTopTen,
   client
 };
