@@ -8,6 +8,20 @@ const Admin = ({ topten, users, products, auth, ranking }) => {
 
   if (!auth.is_admin) return <p>Access Denied</p>;
 
+  const [productStats, setProductStats] = useState([]);
+
+  useEffect(() => {
+    const productStatsData = products.map(product => {
+      const productRankings = ranking.map(rank => {
+        const votes = topten.filter(item => item.product_id === product.id && item.ranking_id === rank.id).length;
+        return { ranking: rank.ranking, votes };
+      });
+      return { productName: product.name, rankings: productRankings };
+    });
+
+    setProductStats(productStatsData);
+  }, [topten, products, ranking]);
+
   const [userTopten, setUserTopten] = useState([]);
 
   useEffect(() => {
@@ -29,28 +43,42 @@ const Admin = ({ topten, users, products, auth, ranking }) => {
 
   return (
     <div>
+      <h3>Product Stats</h3>
+      <ul>
+        {productStats.map(productStatsItem => (
+          <li key={productStatsItem.productName}>
+            {productStatsItem.productName}
+            <ul>
+              {productStatsItem.rankings.map(rank => (
+                <li key={rank.ranking}>
+                  {`Ranking ${rank.ranking}: Votes - ${rank.votes}`}
+                </li>
+              ))}
+            </ul>
+          </li>
+        ))}
+      </ul>
+
       <h3>Users</h3>
       <ul>
-        {userTopten.map(userToptenItem => {
-          return (
-            <li key={userToptenItem.userId}>
-              {users.find(user => user.id === userToptenItem.userId).username}
-              <ul>
-                {userToptenItem.userTopten.map(toptenItem => {
-                  const product = products.find(
-                    productItem => productItem.id === toptenItem.product_id
-                  );
-                  const rank = ranking.find(rank => rank.id === toptenItem.ranking_id);
-                  return (
-                    <li key={toptenItem.id}>
-                      {product ? `${product.name} (${rank ? rank.ranking : 'N/A'})` : 'Product not found'}
-                    </li>
-                  );
-                })}
-              </ul>
-            </li>
-          );
-        })}
+        {userTopten.map(userToptenItem => (
+          <li key={userToptenItem.userId}>
+            {users.find(user => user.id === userToptenItem.userId).username}
+            <ul>
+              {userToptenItem.userTopten.map(toptenItem => {
+                const product = products.find(
+                  productItem => productItem.id === toptenItem.product_id
+                );
+                const rank = ranking.find(rank => rank.id === toptenItem.ranking_id);
+                return (
+                  <li key={toptenItem.id}>
+                    {product ? `${product.name} (${rank ? rank.ranking : 'N/A'})` : 'Product not found'}
+                  </li>
+                );
+              })}
+            </ul>
+          </li>
+        ))}
       </ul>
     </div>
   );
