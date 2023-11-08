@@ -40,9 +40,10 @@ const Admin = ({ topten, users, products, auth, ranking }) => {
                   const product = products.find(
                     productItem => productItem.id === toptenItem.product_id
                   );
+                  const rank = ranking.find(rank => rank.id === toptenItem.ranking_id);
                   return (
                     <li key={toptenItem.id}>
-                      {product ? product.name : 'Product not found'}
+                      {product ? `${product.name} (${rank ? rank.ranking : 'N/A'})` : 'Product not found'}
                     </li>
                   );
                 })}
