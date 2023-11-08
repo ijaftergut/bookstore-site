@@ -12,10 +12,12 @@ const fetchProducts = async(setProducts)=> {
   const response = await axios.get('/api/products');
   setProducts(response.data);
 };
-const fetchUsers = async(setUsers)=> {
+
+const fetchUsers = async(setUsers) => {
   const response = await axios.get('/api/users');
   setUsers(response.data);
-};
+}
+
 const fetchRanking = async(setRanking)=> {
   const response = await axios.get('/api/ranking');
   setRanking(response.data);
@@ -57,6 +59,15 @@ const logout = (setAuth)=> {
   setAuth({});
 }
 
+const createUser = async(user) => {
+  await axios.post('/api/users', user);
+}
+
+const updateUser = async(user) => {
+  const response = await axios.put(`/api/users/${user.id}`, user);
+  return response.data;
+}
+
 const api = {
   login,
   logout,
@@ -65,7 +76,9 @@ const api = {
   fetchRanking,
   fetchTopTen,
   fetchUsers,
-  submitTopTen
+  submitTopTen,
+  createUser,
+  updateUser
 };
 
 export default api;

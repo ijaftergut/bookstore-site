@@ -6,6 +6,7 @@ import Login from './Login';
 import api from './api';
 import Ranking from './Ranking';
 import TopTen from './TopTen'
+import Admin from './Admin';
 import './index.css'
 const App = ()=> {
   const [products, setProducts] = useState([]);
@@ -27,12 +28,15 @@ const App = ()=> {
     };
     fetchData();
   }, []);
-  useEffect(()=> {
-    const fetchData = async()=> {
-      await api.fetchUsers(setUsers);
-    };
-    fetchData();
-  }, []);
+
+  useEffect(() => {
+    if(auth){
+      const fetchData = async() => {
+        await api.fetchUsers(setUsers);
+      }
+      fetchData();
+    }
+  }, [auth])
 
   useEffect(()=> {
     const fetchData = async()=> {
@@ -125,6 +129,7 @@ const App = ()=> {
             <Link to='/products'>Products ({ products.length })</Link>
             <Link to='/ranking'>ranking</Link>
             <Link to='/topten'>topten</Link>
+            <Link to='/admin'>admin</Link>
               <span className='all'>
                 Welcome { auth.username }!
                 <button onClick={ logout }>Logout</button>
@@ -158,7 +163,16 @@ const App = ()=> {
                 products={products}
                 setTopTen={setTopTen}
               />}/>
+              <Route path='/admin' element={
+                  <Admin
+                    users={users}
+                    setUsers={setUsers}
+                    products={products}
+                    setProducts={setProducts}
+                    auth={auth}
+                  />}/>
             </Routes>
+
             </main>
             </>
         ):(

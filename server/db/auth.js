@@ -3,6 +3,8 @@ const { v4 } = require('uuid');
 const uuidv4 = v4;
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { cli } = require('webpack');
+
 
 const findUserByToken = async(token) => {
   try {
@@ -63,8 +65,41 @@ const createUser = async(user)=> {
   return response.rows[0];
 };
 
+const fetchUser = async(id) => {
+  SQL = `
+  SELECT * FROM users
+  WHERE id = $1
+  `
+  const response = await client.query(SQL, [id])
+  return response.rows[0]
+}
+
+const updateUser = async(user)=> {
+  const SQL =`
+  UPDATE users
+  SET is_vip = $1,
+  username = $2,
+  is_admin = $3,
+  image = $4
+  WHERE id = $5
+  RETURNING *
+  `;
+  const response = await client.query(SQL, [user.is_vip, user.username, user.is_admin, user.image, user.id]);
+  return response.rows[0];
+}
+
+const fetchUsers = async() => {
+  const SQL = `
+  SELECT * FROM users
+  `
+  const response = await client.query(SQL);
+  return response.rows
+}
 module.exports = {
   createUser,
   authenticate,
-  findUserByToken
+  findUserByToken,
+  fetchUsers,
+  fetchUser,
+  updateUser
 };

@@ -8,10 +8,6 @@ const {
 } = require('./products');
 
 const {
-  fetchUsers
-} = require('./users');
-
-const {
   fetchRanking,
   createRanking
 } = require('./ranking');
@@ -19,7 +15,10 @@ const {
 const {
   createUser,
   authenticate,
-  findUserByToken
+  findUserByToken,
+  fetchUsers,
+  fetchUser,
+  updateUser
 } = require('./auth');
 
 const {
@@ -136,6 +135,9 @@ module.exports = {
   fetchProducts,
   authenticate,
   findUserByToken,
+  fetchUsers,
+  fetchUser,
+  updateUser,
   seed,
   fetchRanking,
   createRanking,
