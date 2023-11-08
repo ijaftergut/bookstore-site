@@ -23,15 +23,6 @@ const {
 } = require('./auth');
 
 const {
-  fetchLineItems,
-  createLineItem,
-  updateLineItem,
-  deleteLineItem,
-  updateOrder,
-  fetchOrders
-} = require('./cart');
-
-const {
   fetchTopTen,
   createTopTen,
 } = require('./topten');
@@ -138,24 +129,11 @@ const seed = async()=> {
   const [alpha] = await Promise.all([
     createTopTen({ product_id: GoodnightMoon.id, user_id: ethyl.id, ranking_id: one.id})
   ]);
-  let orders = await fetchOrders(ethyl.id);
-  let cart = orders.find(order => order.is_cart);
-  let lineItem = await createLineItem({ order_id: cart.id, product_id: GoodnightMoon.id});
-  lineItem.quantity++;
-  await updateLineItem(lineItem);
-  lineItem = await createLineItem({ order_id: cart.id, product_id: Jumanji.id});
-  cart.is_cart = false;
-  await updateOrder(cart);
+ 
 };
 
 module.exports = {
   fetchProducts,
-  fetchOrders,
-  fetchLineItems,
-  createLineItem,
-  updateLineItem,
-  deleteLineItem,
-  updateOrder,
   authenticate,
   findUserByToken,
   seed,

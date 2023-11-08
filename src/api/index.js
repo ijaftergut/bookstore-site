@@ -21,54 +21,15 @@ const fetchRanking = async(setRanking)=> {
   setRanking(response.data);
 };
 
-const fetchOrders = async(setOrders)=> {
-  const response = await axios.get('/api/orders', getHeaders());
-  setOrders(response.data);
-};
-
-const fetchLineItems = async(setLineItems)=> {
-  const response = await axios.get('/api/lineItems', getHeaders());
-  setLineItems(response.data);
-};
 const fetchTopTen = async(setTopTen)=> {
   const response = await axios.get('/api/topten', getHeaders());
   setTopTen(response.data);
 };
 
-const createLineItem = async({ product, cart, lineItems, setLineItems })=> {
-  const response = await axios.post('/api/lineItems', {
-    order_id: cart.id,
-    product_id: product.id
-  }, getHeaders());
-  setLineItems([...lineItems, response.data]);
-};
-// const createTopTen = async({ topten, setTopTen })=> {
-//   const response = await axios.post('/api/topten', getHeaders());
-//   setTopTen([...topten, response.data]);
-// };
 const submitTopTen = async (json) => {
   const response = await axios.post('/api/topten', json)
   return response.data
 };
-const updateLineItem = async({ lineItem, cart, lineItems, setLineItems })=> {
-  const response = await axios.put(`/api/lineItems/${lineItem.id}`, {
-    quantity: lineItem.quantity + 1,
-    order_id: cart.id
-  }, getHeaders());
-  setLineItems(lineItems.map( lineItem => lineItem.id == response.data.id ? response.data: lineItem));
-};
-
-const updateOrder = async({ order, setOrders })=> {
-  await axios.put(`/api/orders/${order.id}`, order, getHeaders());
-  const response = await axios.get('/api/orders', getHeaders());
-  setOrders(response.data);
-};
-
-const removeFromCart = async({ lineItem, lineItems, setLineItems })=> {
-  const response = await axios.delete(`/api/lineItems/${lineItem.id}`, getHeaders());
-  setLineItems(lineItems.filter( _lineItem => _lineItem.id !== lineItem.id));
-};
-
 const attemptLoginWithToken = async(setAuth)=> {
   const token = window.localStorage.getItem('token');
   if(token){
@@ -100,12 +61,6 @@ const api = {
   login,
   logout,
   fetchProducts,
-  fetchOrders,
-  fetchLineItems,
-  createLineItem,
-  updateLineItem,
-  updateOrder,
-  removeFromCart,
   attemptLoginWithToken,
   fetchRanking,
   fetchTopTen,
