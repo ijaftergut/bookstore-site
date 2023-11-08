@@ -109,11 +109,17 @@ const seed = async()=> {
     createUser({ username: 'lucy', password: 'l_password', is_admin: false}),
     createUser({ username: 'ethyl', password: '1234', is_admin: true})
   ]);
-  const [foo, bar, bazz, bass] = await Promise.all([
-    createProduct({ name: 'foo' , image: 'https://i.imgur.com/EtIXBar.png', description:'hello world'}),
-    createProduct({ name: 'bar' }),
-    createProduct({ name: 'bazz' }),
-    createProduct({ name: 'quq' }),
+  const [GoodnightMoon, Jumanji, FrogAndToadAreFriends, PressHere, IfYouGiveAMouseACookie,TheVeryQuietCricket, TheLionAndTheMouse, Stuck, GoDogGo, WhereTheWildThingsAre ] = await Promise.all([
+    createProduct({ name: 'Goodnight Moon' , image: 'https://www.weareteachers.com/wp-content/uploads/Goodnight-moon.jpeg', description:'hello world'}),
+    createProduct({ name: 'Jumanji', image:'https://www.weareteachers.com/wp-content/uploads/Jumanji-by-Chris-Van-Allsburg-2000x1751.jpeg' }),
+    createProduct({ name: 'Frog and Toad Are Friends' , image: 'https://www.weareteachers.com/wp-content/uploads/Frog-and-Toad-Are-Friends-by-Arnold-Lobel-1365x2048.jpeg', description:'hello world'}),
+    createProduct({ name: 'Press Here', image:'https://www.weareteachers.com/wp-content/uploads/Press-Here-by-Herve-Tullet-2000x2003.jpeg' }),
+    createProduct({ name: 'If You Give A Mouse A Cookie' , image: 'https://www.weareteachers.com/wp-content/uploads/If-You-Give-a-Mouse-a-Cookie-by-Laura-Numeroff.jpeg', description:'hello world'}),
+    createProduct({ name: 'The Very Quiet Cricket', image:'https://www.weareteachers.com/wp-content/uploads/The-Very-Quiet-Cricket-by-Eric-Carle-2000x1441.jpeg' }),
+    createProduct({ name: 'The Lion and The Mouse' , image: 'https://www.weareteachers.com/wp-content/uploads/The-Lion-and-the-Mouse-by-Jerry-Pinkney-2000x1729.jpeg', description:'hello world'}),
+    createProduct({ name: 'Stuck', image:'https://www.weareteachers.com/wp-content/uploads/Stuck-by-Oliver-Jeffers-1440x2048.jpeg' }),
+    createProduct({ name: 'Go Dog Go' , image: 'https://www.weareteachers.com/wp-content/uploads/Go-Dog.-Go-by-P.D.-Eastman-1494x2048.jpeg', description:'hello world'}),
+    createProduct({ name: 'Where The Wild Things Are', image:'https://upload.wikimedia.org/wikipedia/en/8/8d/Where_The_Wild_Things_Are_%28book%29_cover.jpg' }),
   ]);
   const [one, two, three, four, five, six, seven, eight, nine, ten] = await Promise.all([
     createRanking({ ranking: 1 }),
@@ -128,16 +134,16 @@ const seed = async()=> {
     createRanking({ ranking: 10 })
     
   ]);
-  console.log(foo.id)
+  console.log(GoodnightMoon.id)
   const [alpha] = await Promise.all([
-    createTopTen({ product_id: foo.id, user_id: ethyl.id, ranking_id: one.id})
+    createTopTen({ product_id: GoodnightMoon.id, user_id: ethyl.id, ranking_id: one.id})
   ]);
   let orders = await fetchOrders(ethyl.id);
   let cart = orders.find(order => order.is_cart);
-  let lineItem = await createLineItem({ order_id: cart.id, product_id: foo.id});
+  let lineItem = await createLineItem({ order_id: cart.id, product_id: GoodnightMoon.id});
   lineItem.quantity++;
   await updateLineItem(lineItem);
-  lineItem = await createLineItem({ order_id: cart.id, product_id: bar.id});
+  lineItem = await createLineItem({ order_id: cart.id, product_id: Jumanji.id});
   cart.is_cart = false;
   await updateOrder(cart);
 };

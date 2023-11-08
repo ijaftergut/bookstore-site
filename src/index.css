@@ -105,3 +105,26 @@ form > * {
 .all {
   display:flex;
 }
+
+.product{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  border: black solid 1px;
+  width:350px;
+  height:400px;
+}
+.img{
+  width:100px;
+  height:150px;
+}
+.products{
+  flex-direction: column;
+  
+}
+.centered{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

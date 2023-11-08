@@ -11,17 +11,17 @@ const Products = ({ products,  auth, createTopTen, topten, users, setTopTen, ran
     }
   };
   return (
-    <div>
-      <h2>Products</h2>
-      <ul>
+    <div className='centered'>
+      <h2 className='centered'>Products</h2>
+      <ul className='all products'>
         {
           products.map( product => {
             const top = topten.find(top=>top.product_id===product.id)
             return (
-              <li key={ product.id }>
-                <h3 className='all'>{ product.name }</h3>
-                <img className='all' src={product.image} />
-                <p className='all'>{product.description}</p>
+              <li className='all product' key={ product.id }>
+                <h3 >{ product.name }</h3>
+                <img  className='img' src={product.image} />
+                <p >{product.description}</p>
                 {!top?
                 <TopTenForm
             onSubmit={handleTopTenSubmission}
