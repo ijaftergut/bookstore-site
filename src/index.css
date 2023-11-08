@@ -127,4 +127,40 @@ form > * {
   justify-content: center;
   align-items: center;
   text-align: center;
+}body {
+  background: linear-gradient(90deg, lightblue, navy);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.product:hover {
+  transform: scale(1.1);
+  background-color: #d5a411;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+h1 {
+  animation: bounce 1s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
 }
