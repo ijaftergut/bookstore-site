@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "webpack --watch --mode=development",
-    "start:dev": "JWT=michael nodemon server/index.js --ignore src/ --ignore dist/",
+    "start:dev": "JWT=!S@@c nodemon server/index.js --ignore src/ --ignore dist/",
     "start:dev:sync": "SYNC=true npm run start:dev"
   },
   "keywords": [],
