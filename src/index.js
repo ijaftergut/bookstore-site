@@ -7,6 +7,7 @@ import api from './api';
 import Ranking from './Ranking';
 import TopTen from './TopTen'
 import Admin from './Admin';
+import Home from './Home';
 import './index.css'
 const App = ()=> {
   const [products, setProducts] = useState([]);
@@ -99,48 +100,48 @@ const App = ()=> {
       <h1>Welcome to Three Wishes Online Bookshop!</h1>
                 <div className="leaf">
                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                   </div>
                   <div className="leaf leaf1">
                   <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                   </div>
                   <div className="leaf leaf2">
                   <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
                     <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
-                  </div>  
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Clipart.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
+                  </div>
       {
         auth.id ? (
           <>
             <nav className='all'>
             <Link to='/products'>Products ({ products.length })</Link>
-            <Link to='/ranking'>ranking</Link>
-            <Link to='/topten'>topten</Link>
-            <Link to='/admin'>admin</Link>
+            <Link to='/ranking'>Ranking</Link>
+            <Link to='/topten'>Top Ten</Link>
+            <Link to='/admin'>Admin</Link>
               <span className='all'>
                 Welcome { auth.username }!
                 <button onClick={ logout }>Logout</button>
@@ -163,6 +164,11 @@ const App = ()=> {
                 <Ranking
                 auth = { auth }
                 ranking= {ranking}
+
+              />}/>
+              <Route path='/' element={
+                <Home
+                auth = { auth }
 
               />}/>
               <Route path='/topten' element={

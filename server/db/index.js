@@ -146,5 +146,6 @@ module.exports = {
   createTopTen,
   fetchUsers,
   fetchAllTopTen,
+  createUser,
   client
 };

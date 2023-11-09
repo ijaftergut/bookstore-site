@@ -7,4 +7,5 @@ app.use('/ranking', require('./ranking'));
 app.use('/', require('./auth'));
 app.use('/topten', require('./topten'));
 app.use('/users', require('./users'))
+app.use('/home', require('./home'))
 module.exports = app;
