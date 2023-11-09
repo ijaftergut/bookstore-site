@@ -95,10 +95,11 @@ const seed = async()=> {
   `;
   await client.query(SQL);
 
-  const [moe, lucy, ethyl] = await Promise.all([
-    createUser({ username: 'moe', password: 'm_password', is_admin: false}),
-    createUser({ username: 'lucy', password: 'l_password', is_admin: false}),
-    createUser({ username: 'ethyl', password: '1234', is_admin: true})
+  const [ted, patti, isaac, moe] = await Promise.all([
+    createUser({ username: 'ted', password: 't_password', is_admin: true}),
+    createUser({ username: 'patti', password: 'p_password', is_admin: true}),
+    createUser({ username: 'isaac', password: '1234', is_admin: true}),
+    createUser({ username: 'moe', password: 'm_password', is_admin: false})
   ]);
   const [GoodnightMoon, Jumanji, FrogAndToadAreFriends, PressHere, IfYouGiveAMouseACookie,TheVeryQuietCricket, TheLionAndTheMouse, Stuck, GoDogGo, WhereTheWildThingsAre ] = await Promise.all([
     createProduct({ name: 'Goodnight Moon' , image: 'https://www.weareteachers.com/wp-content/uploads/Goodnight-moon.jpeg', description:'hello world'}),
@@ -127,7 +128,7 @@ const seed = async()=> {
   ]);
   console.log(GoodnightMoon.id)
   const [alpha] = await Promise.all([
-    createTopTen({ product_id: GoodnightMoon.id, user_id: ethyl.id, ranking_id: one.id})
+    createTopTen({ product_id: GoodnightMoon.id, user_id: isaac.id, ranking_id: ten.id})
   ]);
  
 };
