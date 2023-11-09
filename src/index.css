@@ -102,6 +102,9 @@ form {
 form > * {
   margin: 0.5rem;
 }
+nav > * {
+  padding: 0.5rem;
+}
 .all {
   display:flex;
 }

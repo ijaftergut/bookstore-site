@@ -139,9 +139,8 @@ const App = ()=> {
           <>
             <nav className='all'>
             <Link to='/products'>Products ({ products.length })</Link>
-            <Link to='/ranking'>Ranking</Link>
             <Link to='/topten'>Top Ten</Link>
-            <Link to='/admin'>Admin</Link>
+            {auth.is_admin?<Link to='/admin'>Admin</Link>:null}
               <span className='all'>
                 Welcome { auth.username }!
                 <button onClick={ logout }>Logout</button>
