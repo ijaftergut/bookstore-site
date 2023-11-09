@@ -94,9 +94,9 @@ const App = ()=> {
     </div>
   </div>: null}
        <div className='content'>
-       <div className="logo">
+       {/* <div className="logo">
         <img src="https://cdn.shopify.com/s/files/1/0754/0519/7598/files/twbsecondary.png?v=1682549023&width=80px" alt="Logo" width="150" height="150" />
-      </div>
+      </div> */}
       <h1>Welcome to Three Wishes Online Bookshop!</h1>
                 <div className="leaf">
                    <div><img src="https://www.pngmart.com/files/23/Library-PNG-Photo.png" height="75px" width="75px" onClick={() => handleImageClick('library')}></img></div>
@@ -165,7 +165,7 @@ const App = ()=> {
                 ranking= {ranking}
 
               />}/>
-              <Route path='/' element={
+              <Route path='*' element={
                 <Home
                 auth = { auth }
 
@@ -196,7 +196,6 @@ const App = ()=> {
         ):(
           <div className='all'>
             <Login login={ login }/>
-            
           </div>
         )
       }
