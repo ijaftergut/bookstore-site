@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import api from './api';
 
 const Login = ({ login })=> {
   const [username, setUsername] = useState('');
@@ -13,6 +14,16 @@ const Login = ({ login })=> {
       console.log(ex.response.data);
     }
   }
+  const newUser = async(ev) => {
+    try {
+      const user = {password, username, is_admin: false, is_vip: false}
+      await api.createUser(user)
+      _login(ev)
+    } catch (error) {
+      console.log(error.response.data)
+    }
+  }
+
   return (
     <form onSubmit={ _login }>
       <input
@@ -27,6 +38,7 @@ const Login = ({ login })=> {
         onChange={ ev => setPassword(ev.target.value)}
       />
       <button disabled={!username || !password}>Login</button>
+      <button type='button' onClick={ev => newUser(ev)} disabled={!username || !password}>Create New User</button>
     </form>
   );
 }
