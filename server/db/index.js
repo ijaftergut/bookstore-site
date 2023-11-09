@@ -102,16 +102,16 @@ const seed = async()=> {
     createUser({ username: 'moe', password: 'm_password', is_admin: false})
   ]);
   const [GoodnightMoon, Jumanji, FrogAndToadAreFriends, PressHere, IfYouGiveAMouseACookie,TheVeryQuietCricket, TheLionAndTheMouse, Stuck, GoDogGo, WhereTheWildThingsAre ] = await Promise.all([
-    createProduct({ name: 'Goodnight Moon' , image: 'https://www.weareteachers.com/wp-content/uploads/Goodnight-moon.jpeg', description:'hello world'}),
-    createProduct({ name: 'Jumanji', image:'https://www.weareteachers.com/wp-content/uploads/Jumanji-by-Chris-Van-Allsburg-2000x1751.jpeg' }),
-    createProduct({ name: 'Frog and Toad Are Friends' , image: 'https://www.weareteachers.com/wp-content/uploads/Frog-and-Toad-Are-Friends-by-Arnold-Lobel-1365x2048.jpeg', description:'hello world'}),
-    createProduct({ name: 'Press Here', image:'https://www.weareteachers.com/wp-content/uploads/Press-Here-by-Herve-Tullet-2000x2003.jpeg' }),
-    createProduct({ name: 'If You Give A Mouse A Cookie' , image: 'https://www.weareteachers.com/wp-content/uploads/If-You-Give-a-Mouse-a-Cookie-by-Laura-Numeroff.jpeg', description:'hello world'}),
-    createProduct({ name: 'The Very Quiet Cricket', image:'https://www.weareteachers.com/wp-content/uploads/The-Very-Quiet-Cricket-by-Eric-Carle-2000x1441.jpeg' }),
-    createProduct({ name: 'The Lion and The Mouse' , image: 'https://www.weareteachers.com/wp-content/uploads/The-Lion-and-the-Mouse-by-Jerry-Pinkney-2000x1729.jpeg', description:'hello world'}),
-    createProduct({ name: 'Stuck', image:'https://www.weareteachers.com/wp-content/uploads/Stuck-by-Oliver-Jeffers-1440x2048.jpeg' }),
-    createProduct({ name: 'Go Dog Go' , image: 'https://www.weareteachers.com/wp-content/uploads/Go-Dog.-Go-by-P.D.-Eastman-1494x2048.jpeg', description:'hello world'}),
-    createProduct({ name: 'Where The Wild Things Are', image:'https://upload.wikimedia.org/wikipedia/en/8/8d/Where_The_Wild_Things_Are_%28book%29_cover.jpg' }),
+    createProduct({ name: 'Goodnight Moon' , image: 'https://www.weareteachers.com/wp-content/uploads/Goodnight-moon.jpeg', description:'Margaret Wise Brown'}),
+    createProduct({ name: 'Jumanji', image:'https://www.weareteachers.com/wp-content/uploads/Jumanji-by-Chris-Van-Allsburg-2000x1751.jpeg', description:'Chris Van Allsburg' }),
+    createProduct({ name: 'Frog and Toad Are Friends' , image: 'https://www.weareteachers.com/wp-content/uploads/Frog-and-Toad-Are-Friends-by-Arnold-Lobel-1365x2048.jpeg', description:'Arnold Lobel'}),
+    createProduct({ name: 'Press Here', image:'https://www.weareteachers.com/wp-content/uploads/Press-Here-by-Herve-Tullet-2000x2003.jpeg', description: 'Herve Tullet' }),
+    createProduct({ name: 'If You Give A Mouse A Cookie' , image: 'https://www.weareteachers.com/wp-content/uploads/If-You-Give-a-Mouse-a-Cookie-by-Laura-Numeroff.jpeg', description:'Laura Numeroff'}),
+    createProduct({ name: 'The Very Quiet Cricket', image:'https://www.weareteachers.com/wp-content/uploads/The-Very-Quiet-Cricket-by-Eric-Carle-2000x1441.jpeg' , description:'Eric Carle'}),
+    createProduct({ name: 'The Lion and The Mouse' , image: 'https://www.weareteachers.com/wp-content/uploads/The-Lion-and-the-Mouse-by-Jerry-Pinkney-2000x1729.jpeg', description:'Jerry Pinkney'}),
+    createProduct({ name: 'Stuck', image:'https://www.weareteachers.com/wp-content/uploads/Stuck-by-Oliver-Jeffers-1440x2048.jpeg' , description:'Oliver Jeffers'}),
+    createProduct({ name: 'Go Dog Go' , image: 'https://www.weareteachers.com/wp-content/uploads/Go-Dog.-Go-by-P.D.-Eastman-1494x2048.jpeg', description:'P.D. Eastman'}),
+    createProduct({ name: 'Where The Wild Things Are', image:'https://upload.wikimedia.org/wikipedia/en/8/8d/Where_The_Wild_Things_Are_%28book%29_cover.jpg', description:'Maurice Sendak' }),
   ]);
   const [one, two, three, four, five, six, seven, eight, nine, ten] = await Promise.all([
     createRanking({ ranking: 1 }),
